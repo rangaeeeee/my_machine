@@ -1,0 +1,225 @@
+\documentclass[13pt]{book}
+% list of package used in 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[ampersand]{easylist}
+\usepackage{hyperref}
+
+\title{Notes on Mathematics}
+\author{Rangarajan R}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter{Probability}
+\section{Introduction}
+\begin{itemize}
+\item \textbf{Probability : } The prediction of a certain outcome when something occurs.
+\item Examples :
+  \begin{enumerate}
+  \item Toss a die
+  \item Flip a coin
+  \item Draw a card
+  \end{enumerate}
+\end{itemize}
+\subsection{Types of probabilities}
+\begin{enumerate}
+\item \textbf{Theoretical Probability : } Based on predictable parameters. \\
+  \(\rightarrow\) P(Tossing a five) = \(\frac{1}{6}\) \\
+  \(\rightarrow\) P(Drawing a spade) = \(\frac{1}{4}\) 
+\item \textbf{Empirical Probability : } Based on historical and geological records. \\
+  \(\rightarrow\) P(Strong earthquake in the next ten years) \\
+  \(\rightarrow\) P(Getting into a car accident)
+\item \textbf{Subjective Probability : } Based on experience or initution. \\
+  \(\rightarrow\) P(Getting hurt when falling off a bicycle)
+\end{enumerate}
+\section{Definition}
+\subsection{Sets and Elements}
+\begin{itemize}
+\item \textbf{Set} is composed of \textbf{elements or members}
+\item where each element is a possible outcome \\
+  \( A = \{a,b,c,d\}\) a \(\in\) A\\
+  \( B = \{e,f,g,h\}\) a \(\ni\) B
+\item A set can be defined in two ways
+  \begin{enumerate}
+  \item Listing all the elements \( A = \{a,b,c,d\}\)
+  \item Describing the properties held by the members and/or non-members
+    \end{enumerate}
+\end{itemize}
+\subsection{Sample spaces}
+\begin{itemize}
+\item \textbf{Sample Space (\(\Omega\)) : } A set whose elements describe the outcomes of the experiment of interest.
+\item Examples : \\ Coin Toss \(\Omega\) = \( \{ head,tail \}\)\\
+  Determine the month a student is born in \(\Omega\) = \( \{Jan,Feb,Mar\}\)
+\end{itemize}
+\subsection{Factorial}
+\begin{itemize}
+\item Determine the various ways (and the number of ways) 3 coloured marbles can be placed.
+\item Example : \\
+  \(\Omega\) = \(\{RBG,RGB,BGR,BRG,GBR,GRB\}\)
+\item number of elements = n! = 3! = 1.2.3 = 6
+\item And a \(y^{th}\) color (Y)
+\item\(\Omega\) = \({YRBG,YRGB,...}\)
+\item number of elements = n! = 4! = 1.2.3.4 = 24
+\end{itemize}
+\subsection{Events}
+\begin{itemize}
+  \item \textbf{Event} is a subset of a sample space
+  \item Toss a die \(\Omega\) = \(\{1,2,3,4,5,6\}\)
+  \item Event is tossing an even number = \({2,4,6}\)
+  \item P(Event) = \(\frac{3}{6}\) = \(\frac{1}{2}\)
+\end{itemize}
+\subsection{Intersection, union, compliment}
+\begin{itemize}
+\item \(\Omega\) = \(\{1,2,3,4,5,6,7,8,9,10\}\) \\
+  A = \(\{1,3,5,7,9\}\) \\
+  B = \(\{2,4,6,8,10\}\) \\
+  C = \(\{1,2,3,4,5\}\) \\
+  D = \(\{4,8\}\) 
+\item \textbf{Intersection : } A \(\cap\) C = \(\{1,3,5\}\)
+\item \textbf{Union : } A \(\cup\) C = \(\{1,2,3,4,5,7,9\}\)
+\item \textbf{Compliment : } \(A^C\) = \(\{2,4,6,8,10\}\)
+\item \textbf{Disjoint :} A and D are disjoint
+\item \textbf{Subset : } D \(\subset\) C
+\item \textbf{Difference : }  B - D = \(\{2,6,10\}\)
+\end{itemize}
+\subsection{DeMorgan's Laws}
+\begin{itemize}
+  \item \(\Omega\) = \(\{1,2,3,4,5,6,7,8,9,10\}\) \\
+  A = \(\{1,3,5,7,9\}\) \\
+  B = \(\{2,4,6,8,10\}\) \\
+  C = \(\{1,2,3,4,5\}\) \\
+  D = \(\{4,8\}\)
+    \item Laws :
+  \begin{enumerate}
+    \item \(A \cup C = A^C \cap C^C\)
+    \item \(A \cap C = A^C \cup C^C\)
+    \end{enumerate}
+\end{itemize}
+\subsection{Probability Function}
+\begin{itemize}
+\item Probability function, P, it assign number from 0 to 1 to each event in \(\Omega\) such that 
+  \item P(\(\Omega\)) = 1
+  \item P(A) = Number of ways \textbf{ A } can occur/total number of outcomes
+  \item Disjoint, P(A\(\cup\)B) = P(A) + P(B)
+  \item Overlapping, P(A\(\cup\)B) = P(A) + P(B) - P(A\(\cap\)B)
+  \item Flipping \textbf{n} coins, \(\Omega\) = \(\{ 2^n\}\) outcomes
+  \item Let k = number of heads (where n \(\preceq\) k \(\preceq\) 0)
+  \item P(k heads, n-k tails) = \(\frac{\binom{n}{k}}{2^n}\) \\
+    where \(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)
+  \item Ex n = 4, k = 1, (4-coins), P(1-H,3-T) = \(\frac{\frac{1.2.3.4}{(1)(1.2.3)}}{16}\) = \(\frac{1}{4}\)
+  \item The probability of an event not occuring, P(Not A) = 1 - P(A)
+  \item The probability of A or B (Independent Events) \\
+    P(A or B) = P(A) + P(B)
+  \item The probability of A or B (Dependent Events) \\
+    P(A or B) = P(A) + P(B) - P(A\(\cap\)B)
+  \end{itemize}
+\subsection{}
+\begin{itemize}
+  \item
+  \end{itemize}
+\subsection{}
+\begin{itemize}
+  \item
+\end{itemize}  
+\section{Mathematics of Randomness}
+\subsection{Probability}
+\begin{itemize}
+  \item \textbf{Equally possible outcomes} two or more events have equal chances of occuring
+  \item The probability of an event is the ratio of the number of favourable outcomes to the total number of equally possible exclusive outcomes.
+  \item Suppose \textbf{\(P_A\)} is the probability of an event \textbf {A}, \textbf{\(m_A\)} is the number of favourable outcomes, and \textbf{n} is the total number of equally possible and exclusive outcomes. 
+    \[P_A = m_A/n\]
+  \item If \(m_A=n\), then \(P_A = 1\) and the event A is a certain event (it always occurs in every outcome).
+  \item If \(m_A=0\), then \(P_A= 0\) and the event A is an impossible event (it never occurs).
+  \item The probability of random event lies between 0 and 1.
+  \item Let an event \textbf{A} be throwing a die and getting exactly divisible by three(\(m_A\) = 2 and n = 6).
+    \[P_A = 1/3\]
+  \item A bag with 15 identical but differently coloured balls (seven white, two green and six red). \\
+    The probability of drawing white ball, \( P_A = m_A/n = 7/15\) \\
+    The probability of drawing green ball, \( P_B = m_B/n = 2/15\) \\
+    The probability of drawing red ball, \( P_C = m_C/n = 2/5\)
+  \item Rule for Addition of probabilities : the probability of one event of several exclusive events occuring is the sum of the probabilities of each separate event.
+
+%    The probability that a randomly drawn ball will be either red or green, \(P_B_+_C = P_B + P_C\)
+%    \[ = (m_B + m_C)/n = (6 + 2)/15 = 8/15\]
+    
+\end{itemize}
+\subsection{Random Numbers}
+\subsection{Random Events}
+\subsection{Discrete Random Variables}
+\subsection{Continuous Random Variables}
+\section{Decision Making}
+\chapter{Matrix Algebra}
+\section{Basic Definition}
+\begin{itemize}
+\item A set \textbf{mn} of numbers (real or complex) arranged in a reactangular array of \textbf{m} rows and \textbf{n} columns
+  \[A =
+  \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots & a_{1n}\\
+    a_{21} & a_{22} & a_{23} & \dots & a_{2n} \\
+    \dots & \dots & \dots & \dots  & \dots \\
+    a_{11} & a_{12} & a_{13} & \dots & a_{1n}
+  \end{pmatrix}
+\]
+is called \textit{matrix} (of numbers).
+\item The rows and columns above are termed the \textit{lines} of the matrix.
+\item if m = n, the matrix is called a \textit{square matrix} of order \textit{n}.
+\item if m \(\neq\) n, the matrix is called a \textit{square matrix} of order \textit{n}.
+\item A \textit{1 X n} matrix is called a \textit{row vector}.
+\item An \textit{m X 1} matrix is called a \textit{column vector}.
+\end{itemize}
+\newcommand{\sectionbreak}{\clearpage}
+\section{Operations Involving Matrix}
+\subsection{Equality of matrices}
+\(\bullet\) Two matrices A = [a\(_{ij}\)] and B = [b\(_{ij}\)] are considered equal, A = B, if they have the same dimensions, and the corresponding elements are equal.
+\subsection{The sum and difference of matrices}
+\subsection{Multiplication of a matrix by a scalar}
+\subsection{Multiplication of matrices}
+\section{The transpose of a matrix}
+\section{The inverse matrix}
+\section{Power of a matrix}
+\section{Rational function of a matrix}
+\section{The absolute value and norm of a matrix}
+\section{The rank of a matrix}
+\section{The limit of a matrix}
+\section{Series of matrix}
+\section{Partitioned matrix}
+\section{Matrix inversion by partitioned}
+\section{Triangular matrix}
+\section{Elementary transformations of matrices}
+\section{Computation of determinants}
+\part{Statistics}
+\chapter{Basic Concepts}
+\section{Population and Sample Data}
+\subsection{Population Data}
+\begin{itemize}
+  \item Oftentimes we need to ask questions about and collect data for an entire group, class or type of people or objects.
+  \item The population is defined by the researcher.
+  \item There are no set rules to apply when defining a population except knowledge, common sense, and judgement.
+  \item Population can be quite large.
+\end{itemize}
+\subsection{Sample Data}
+\begin{itemize}
+  \item When we need to make conclusions or estimates about an entire population we almost always use a sample(s) from our population of interest.
+  \item A small but well-chosen sample can accurately reflect the characteristics of the entire population from which it is chosen.
+  \item All elements in a sample must also by definition be part of the population as it is defined.
+  \item The sample should be representative of the population from which it is drawn.
+  \item In almost all cases(if not all cases) samples from the same population should be independent of each other.
+  \item In many cases, the sample is chosen randomly from the population(random sample); but there are other methods.
+  \item A sample is always an approximation of the population.
+\end{itemize}
+
+\begin{itemize}
+  \item A
+\end{itemize}
+
+\begin{itemize}
+  \item A
+\end{itemize}
+
+\end{document}
